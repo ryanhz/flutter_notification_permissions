@@ -52,7 +52,7 @@ class NotificationSettingsIos {
     this.badge = true,
   });
   // if we cant find a value from map set it as false instead of null
-  NotificationSettingsIos._fromMap(Map<String, bool> settings)
+  NotificationSettingsIos.fromMap(Map<String, bool> settings)
       : sound = settings['sound'] ?? false,
         alert = settings['alert'] ?? false,
         badge = settings['badge'] ?? false;

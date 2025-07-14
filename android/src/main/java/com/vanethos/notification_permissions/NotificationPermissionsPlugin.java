@@ -11,15 +11,6 @@ import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodChannel;
 
 public class NotificationPermissionsPlugin implements FlutterPlugin, ActivityAware {
-  @SuppressWarnings("deprecation")
-  public static void registerWith(io.flutter.plugin.common.PluginRegistry.Registrar registrar) {
-    final NotificationPermissionsPlugin plugin = new NotificationPermissionsPlugin();
-    plugin.onAttachedToEngine(registrar.context(), registrar.messenger());
-
-    if (registrar.activity() != null) {
-      plugin.onActivityChanged(registrar.activity());
-    }
-  }
 
   @Nullable
   private MethodChannel channel;

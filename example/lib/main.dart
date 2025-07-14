@@ -11,7 +11,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
-  Future<String> permissionStatusFuture;
+  late Future<String?> permissionStatusFuture;
 
   var permGranted = "granted";
   var permDenied = "denied";
@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   }
 
   /// Checks the notification permission status
-  Future<String> getCheckNotificationPermStatus() {
+  Future<String?> getCheckNotificationPermStatus() {
     return NotificationPermissions.getNotificationPermissionStatus()
         .then((status) {
       switch (status) {
@@ -101,8 +101,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                     SizedBox(
                       height: 20,
                     ),
-                    FlatButton(
-                      color: Colors.amber,
+                    FilledButton(
                       child: Text("Ask for notification status".toUpperCase()),
                       onPressed: () {
                         // show the dialog/open settings screen
